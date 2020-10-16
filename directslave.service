@@ -1,0 +1,8 @@
+[Unit]
+After=directslave.service
+
+[Service]
+ExecStart=/usr/local/directslave/bin/directslave --run
+
+[Install]
+WantedBy=default.target
