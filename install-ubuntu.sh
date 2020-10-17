@@ -1,5 +1,5 @@
 #!/bin/sh
-apt install bind9
+apt install -y bind9
 wget -O /usr/local/directslave.tar.gz https://directslave.com/download/directslave-3.3-advanced-all.tar.gz
 tar -xzvf /usr/local/directslave.tar.gz -C /usr/local/
 curl https://get.acme.sh | sh
