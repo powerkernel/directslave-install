@@ -3,8 +3,8 @@
 # Auto Restart
 sed -i "s/\/\/Unattended-Upgrade::Automatic-Reboot \"false\";/Unattended-Upgrade::Automatic-Reboot \"true\";/g" /etc/apt/apt.conf.d/50unattended-upgrades
 
-# install bind9
-apt install -y bind9
+# install software
+apt install -y bind9 uuid-runtime
 
 # install directslave
 wget -O /usr/local/directslave.tar.gz https://directslave.com/download/directslave-3.4.2-advanced-all.tar.gz
