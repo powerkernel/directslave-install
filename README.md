@@ -1,8 +1,9 @@
 # directslave-install
-
-export PASSWORD=`YOUR_DIRECTSLAVE_PASSWORD`
+```bash
+export PASSWORD="YOUR_DIRECTSLAVE_PASSWORD"
 export CF_Token="sdfsdfsdfljlbjkljlkjsdfoiwje"
 export CF_Account_ID="xxxxxxxxxxxxx"
+```
 
 ## For Ubuntu
 
