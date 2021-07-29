@@ -1,11 +1,22 @@
 #!/bin/sh
+
+# Auto Restart
+sed -i "s/\/\/Unattended-Upgrade::Automatic-Reboot \"false\";/Unattended-Upgrade::Automatic-Reboot \"true\";/g" /etc/apt/apt.conf.d/50unattended-upgrades
+
+# install bind9
 apt install -y bind9
-wget -O /usr/local/directslave.tar.gz https://directslave.com/download/directslave-3.3-advanced-all.tar.gz
+
+# install directslave
+wget -O /usr/local/directslave.tar.gz https://directslave.com/download/directslave-3.4.2-advanced-all.tar.gz
 tar -xzvf /usr/local/directslave.tar.gz -C /usr/local/
+
+# install acmesh & configure ssl
 curl https://get.acme.sh | sh
 ~/.acme.sh/acme.sh --issue -d $(hostname -f) --dns dns_cf --keylength ec-384 --preferred-chain  "ISRG"
 mkdir -p /usr/local/directslave/ssl
 ~/.acme.sh/acme.sh --install-cert --ecc -d $(hostname -f) --cert-file /usr/local/directslave/ssl/cert.pem --key-file /usr/local/directslave/ssl/key.pem --fullchain-file /usr/local/directslave/ssl/fullchain.pem --ca-file /usr/local/directslave/ssl/ca.pem
+
+# configure directslave
 mv /usr/local/directslave/bin/directslave-linux-amd64 /usr/local/directslave/bin/directslave
 wget -O /usr/local/directslave/etc/directslave.conf https://raw.githubusercontent.com/powerkernel/directslave-install/main/directslave.conf
 sed -i "s/Change_this_line_to_something_long_&_secure/$(uuidgen)/g" /usr/local/directslave/etc/directslave.conf
