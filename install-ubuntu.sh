@@ -37,3 +37,6 @@ systemctl daemon-reload
 systemctl enable directslave.service
 service directslave start
 ~/.acme.sh/acme.sh --install-cert --ecc -d $(hostname -f) --cert-file /usr/local/directslave/ssl/cert.pem --key-file /usr/local/directslave/ssl/key.pem --fullchain-file /usr/local/directslave/ssl/fullchain.pem --ca-file /usr/local/directslave/ssl/ca.pem --reloadcmd "service directslave restart"
+
+# remove iptables
+apt remove iptables
