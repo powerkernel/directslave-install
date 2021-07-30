@@ -4,7 +4,7 @@
 sed -i "s/\/\/Unattended-Upgrade::Automatic-Reboot \"false\";/Unattended-Upgrade::Automatic-Reboot \"true\";/g" /etc/apt/apt.conf.d/50unattended-upgrades
 
 # install software
-apt install -y bind9 uuid-runtime
+apt install -y bind9 uuid-runtime cron
 
 # install directslave
 wget -O /usr/local/directslave.tar.gz https://directslave.com/download/directslave-3.4.2-advanced-all.tar.gz
