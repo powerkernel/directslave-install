@@ -32,7 +32,7 @@ chmod +x /usr/local/directslave/bin/directslave
 chown -R bind:bind /usr/local/directslave
 chown -R bind:bind /var/lib/bind/slave
 /usr/local/directslave/bin/directslave --password admin:$PASSWORD
-cp /usr/local/directslave/etc/systemd/directslave.service /etc/systemd/system/directslave.service
+wget -O /etc/systemd/system/directslave.service https://raw.githubusercontent.com/powerkernel/directslave-install/main/directslave.service
 systemctl daemon-reload
 systemctl enable directslave.service
 service directslave start
