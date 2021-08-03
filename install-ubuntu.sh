@@ -14,7 +14,7 @@ tar -xzvf /usr/local/directslave.tar.gz -C /usr/local/
 curl https://get.acme.sh | sh
 ~/.acme.sh/acme.sh --set-default-ca  --server  letsencrypt
 ~/.acme.sh/acme.sh --issue -d $(hostname -f) --dns dns_cf --keylength ec-384 --preferred-chain  "ISRG"
-mkdir -p /usr/local/directslave/ssl
+rm /usr/local/directslave/ssl/*
 ~/.acme.sh/acme.sh --install-cert --ecc -d $(hostname -f) --cert-file /usr/local/directslave/ssl/cert.pem --key-file /usr/local/directslave/ssl/key.pem --fullchain-file /usr/local/directslave/ssl/fullchain.pem --ca-file /usr/local/directslave/ssl/ca.pem
 
 # configure directslave
