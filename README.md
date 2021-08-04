@@ -40,4 +40,6 @@ DNS check: http://dns-checker.online-domain-tools.com/
 
 Domain Check: https://www.dnsqueries.com/en/domain_check.php
 
+IntoDNS Test: https://intodns.com/
+
 Change DNS: https://help.directadmin.com/item.php?id=141
