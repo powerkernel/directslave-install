@@ -38,4 +38,6 @@ Test zone transfer: https://hackertarget.com/zone-transfer/
 
 DNS check: http://dns-checker.online-domain-tools.com/
 
+Domain Check: https://www.dnsqueries.com/en/domain_check.php
+
 Change DNS: https://help.directadmin.com/item.php?id=141
