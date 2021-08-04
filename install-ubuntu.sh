@@ -25,8 +25,15 @@ sed -i "s/BINDUID/$(id -u bind)/g" /usr/local/directslave/etc/directslave.conf
 sed -i "s/BINDGIU/$(id -u bind)/g" /usr/local/directslave/etc/directslave.conf
 mkdir -p /var/lib/bind/slave
 touch /var/lib/bind/slave/directslave.inc
+
+# configure bind9
 echo "include \"/var/lib/bind/slave/directslave.inc\";" >> /etc/bind/named.conf
-sed -i "s/listen-on-v6 { any; };/listen-on-v6 { any; };\n     allow-transfer {\"none\";};/g" /etc/bind/named.conf.options
+sed -i "s/listen-on-v6 { any; };/#listen-on-v6 { any; };/g" /etc/bind/named.conf.options
+echo "listen-on port 53 { any; };" >> /etc/bind/named.conf.options
+echo "listen-on-v6 port 53 { any; };" >> /etc/bind/named.conf.options
+echo "allow-transfer {\"none\";};" >> /etc/bind/named.conf.options
+
+# permission
 touch /usr/local/directslave/etc/passwd
 chmod +x /usr/local/directslave/bin/directslave
 chown -R bind:bind /usr/local/directslave
