@@ -2,7 +2,6 @@
 
 # Auto Restart
 sudo sed -i "s/\/\/Unattended-Upgrade::Automatic-Reboot \"false\";/Unattended-Upgrade::Automatic-Reboot \"true\";/g" /etc/apt/apt.conf.d/50unattended-upgrades
-sudo sed -i "s/\/\/Unattended-Upgrade::Automatic-Reboot \"false\";/Unattended-Upgrade::Automatic-Reboot \"true\";/g" /etc/apt/apt.conf.d/50unattended-upgrades
 sudo sed -i "s/\/\/Unattended-Upgrade::Automatic-Reboot-Time \"02:00\";/Unattended-Upgrade::Automatic-Reboot-Time \"02:00\";/g" /etc/apt/apt.conf.d/50unattended-upgrades
 sudo sed -i "s/\/\/Unattended-Upgrade::Remove-Unused-Dependencies \"false\";/Unattended-Upgrade::Remove-Unused-Dependencies \"true\";/g" /etc/apt/apt.conf.d/50unattended-upgrades
 
