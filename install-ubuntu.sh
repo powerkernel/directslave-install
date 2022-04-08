@@ -1,6 +1,7 @@
 #!/bin/sh
 
 # Auto Restart
+
 ```bash
 sudo sed -i "s/\/\/Unattended-Upgrade::Automatic-Reboot \"false\";/Unattended-Upgrade::Automatic-Reboot \"true\";/g" /etc/apt/apt.conf.d/50unattended-upgrades
 sudo sed -i "s/\/\/Unattended-Upgrade::Automatic-Reboot-Time \"02:00\";/Unattended-Upgrade::Automatic-Reboot-Time \"02:00\";/g" /etc/apt/apt.conf.d/50unattended-upgrades
