@@ -1,4 +1,11 @@
 # directslave-install
+
+## Archived
+
+Please use https://github.com/powerkernel/docker-directslave
+
+## ENV
+
 ```bash
 export PASSWORD="YOUR_DIRECTSLAVE_PASSWORD"
 export CF_Token="sdfsdfsdfljlbjkljlkjsdfoiwje"
